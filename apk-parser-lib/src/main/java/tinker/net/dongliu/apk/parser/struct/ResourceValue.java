@@ -133,7 +133,7 @@ public abstract class ResourceValue {
 
         @Override
         public String toStringValue() {
-            return String.valueOf(value != 1);
+            return String.valueOf(value != 0);
         }
     }
 
