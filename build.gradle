@@ -22,7 +22,7 @@ ext {
     javaVersion = JavaVersion.VERSION_1_7
 
     GROUP = 'com.tencent.mm'
-    VERSION_NAME = "1.2.2"
+    VERSION_NAME = "1.2.3"
 
     POM_PACKAGING = "pom"
     POM_DESCRIPTION= "apk-parser-lib"

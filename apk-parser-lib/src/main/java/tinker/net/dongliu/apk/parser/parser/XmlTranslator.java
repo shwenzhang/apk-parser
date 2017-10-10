@@ -60,7 +60,8 @@ public class XmlTranslator implements XmlStreamer {
         }
     }
 
-    private void onAttribute(Attribute attribute) {
+    @Override
+    public void onAttribute(Attribute attribute) {
         sb.append(" ");
         String namespace = this.namespaces.getPrefixViaUri(attribute.getNamespace());
         if (namespace == null) {

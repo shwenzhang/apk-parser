@@ -4,6 +4,7 @@ import tinker.net.dongliu.apk.parser.bean.ApkMeta;
 import tinker.net.dongliu.apk.parser.bean.GlEsVersion;
 import tinker.net.dongliu.apk.parser.bean.Permission;
 import tinker.net.dongliu.apk.parser.bean.UseFeature;
+import tinker.net.dongliu.apk.parser.struct.xml.Attribute;
 import tinker.net.dongliu.apk.parser.struct.xml.Attributes;
 import tinker.net.dongliu.apk.parser.struct.xml.XmlCData;
 import tinker.net.dongliu.apk.parser.struct.xml.XmlNamespaceEndTag;
@@ -93,6 +94,11 @@ public class ApkMetaTranslator implements XmlStreamer {
                 break;
         }
         tagStack[depth++] = xmlNodeStartTag.getName();
+    }
+
+    @Override
+    public void onAttribute(Attribute attribute) {
+
     }
 
     @Override

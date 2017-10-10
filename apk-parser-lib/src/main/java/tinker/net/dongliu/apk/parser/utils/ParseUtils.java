@@ -235,7 +235,7 @@ public class ParseUtils {
     /**
      * get resource value by string-format via resourceId.
      */
-    public static String getResourceById(long resourceId, ResourceTable resourceTable, Locale locale) {
+    public static String getResourceById(long resourceId, ResourceTable resourceTable, Locale locale, boolean fetchRealValue) {
 //        An Android Resource id is a 32-bit integer. It comprises
 //        an 8-bit Package id [bits 24-31]
 //        an 8-bit Type id [bits 16-23]
@@ -304,7 +304,7 @@ public class ParseUtils {
         }
         String result;
 
-        if (locale == null || resource == null) {
+        if (!fetchRealValue || locale == null || resource == null) {
             result = "@" + typeSpec.getName() + "/" + ref;
         } else {
             result = resource.toStringValue();

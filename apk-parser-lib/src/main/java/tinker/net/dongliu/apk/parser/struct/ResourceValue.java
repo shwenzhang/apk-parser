@@ -167,9 +167,18 @@ public abstract class ResourceValue {
         }
 
         @Override
+        public String toString() {
+            return toStringRepresent(false);
+        }
+
+        @Override
         public String toStringValue() {
+            return toStringRepresent(true);
+        }
+
+        private String toStringRepresent(boolean fetchRealValue) {
             long resourceId = getReferenceResourceId();
-            return ParseUtils.getResourceById(resourceId, resourceTable, locale);
+            return ParseUtils.getResourceById(resourceId, resourceTable, locale, fetchRealValue);
         }
 
         public long getReferenceResourceId() {

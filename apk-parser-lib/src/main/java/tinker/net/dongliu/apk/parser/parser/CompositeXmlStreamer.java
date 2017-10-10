@@ -1,5 +1,6 @@
 package tinker.net.dongliu.apk.parser.parser;
 
+import tinker.net.dongliu.apk.parser.struct.xml.Attribute;
 import tinker.net.dongliu.apk.parser.struct.xml.XmlCData;
 import tinker.net.dongliu.apk.parser.struct.xml.XmlNamespaceEndTag;
 import tinker.net.dongliu.apk.parser.struct.xml.XmlNamespaceStartTag;
@@ -21,6 +22,13 @@ public class CompositeXmlStreamer implements XmlStreamer {
     public void onStartTag(XmlNodeStartTag xmlNodeStartTag) {
         for (XmlStreamer xmlStreamer : xmlStreamers) {
             xmlStreamer.onStartTag(xmlNodeStartTag);
+        }
+    }
+
+    @Override
+    public void onAttribute(Attribute attribute) {
+        for (XmlStreamer xmlStreamer : xmlStreamers) {
+            xmlStreamer.onAttribute(attribute);
         }
     }
 
